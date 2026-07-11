@@ -58,9 +58,20 @@ z-index:10;
 
 <img src="484284cf25b5923ede30a0ea55fdd52b.jpg" alt="Imagen">
 
-<audio autoplay loop>
+<audio id="terror" loop>
 <source src="u_g0akwz8ml1-lamentos-del-infierno-194453.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+const audio = document.getElementById("terror");
+
+function iniciarAudio() {
+  audio.play().catch(() => {});
+}
+
+document.addEventListener("click", iniciarAudio, { once: true });
+document.addEventListener("touchstart", iniciarAudio, { once: true });
+</script>
 
 </body>
 </html>
