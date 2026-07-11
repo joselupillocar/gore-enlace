@@ -2,39 +2,51 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Error 0x666</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pantalla de error</title>
 
 <style>
-body{
+html,body{
 margin:0;
-background:black;
+padding:0;
+width:100%;
+height:100%;
+background:#000;
 overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-animation:flash .15s infinite;
+font-family:Arial,sans-serif;
 }
 
 img{
+position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
 object-fit:cover;
+animation:parpadeo .15s infinite;
 }
 
-h1{
-position:absolute;
+#texto{
+position:fixed;
 top:20px;
+left:50%;
+transform:translateX(-50%);
 color:red;
-font-family:monospace;
-font-size:45px;
-text-shadow:0 0 15px red;
+font-size:48px;
+font-weight:bold;
+text-shadow:0 0 20px red;
+animation:texto .4s infinite;
+z-index:10;
 }
 
-@keyframes flash{
-0%{filter:brightness(1);}
-50%{filter:brightness(.2);}
-100%{filter:brightness(1);}
+@keyframes parpadeo{
+0%,100%{opacity:1;}
+50%{opacity:.65;}
+}
+
+@keyframes texto{
+0%,100%{opacity:1;}
+50%{opacity:.2;}
 }
 </style>
 
@@ -42,9 +54,9 @@ text-shadow:0 0 15px red;
 
 <body>
 
-<h1>ERROR 0x666</h1>
+<div id="texto">ERROR 0x666</div>
 
-<img src="484284cf25b5923ede30a0ea55fdd52b.jpg">
+<img src="484284cf25b5923ede30a0ea55fdd52b.jpg" alt="Imagen">
 
 <audio autoplay loop>
 <source src="u_g0akwz8ml1-lamentos-del-infierno-194453.mp3" type="audio/mpeg">
